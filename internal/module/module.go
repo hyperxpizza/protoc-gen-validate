@@ -77,6 +77,10 @@ func (g module) Execute(targets map[string]pgs.File, packages map[string]pgs.Pac
 		g.Debugf("filename: %s", filename)
 		g.OverwriteGeneratorFile(filename, buf.String())
 
+		if len(generatedTags) == 0 {
+			continue
+		}
+
 		filename = strings.TrimSuffix(filename, ".go") + ".validate.go"
 		g.AddGeneratorTemplateFile(filename, g.tpl, file)
 	}
