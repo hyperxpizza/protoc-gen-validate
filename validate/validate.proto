@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package validate;
+
+import "google/protobuf/descriptor.proto";
+
+option go_package = "github.com/hyperxpizza/protoc-gen-validate/validate;validate";
+
+extend google.protobuf.FieldOptions {
+    string tag = 837932;
+}

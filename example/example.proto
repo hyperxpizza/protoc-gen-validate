@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package example;
+
+import "validate.proto";
+
+option go_package = "github.com/hyperxpizza/protoc-gen-validate/example";
+
+message Example {
+    string name = 1[(validate.tag) = "required,max=30" ];
+}
